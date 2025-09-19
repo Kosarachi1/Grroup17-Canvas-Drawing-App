@@ -34,14 +34,12 @@ jobs:
     # Install project dependencies
     - name: Install dependencies
       run: |
-        pipenv install --dev
+        pipenv install $(which python3) --dev
         
     # Run basic code quality checks
     - name: Lint code
       run: |
-        # Install flake8 for linting
         pipenv run pip install flake8
-        # Check for syntax errors and basic style issues
         pipenv run flake8 src --count --show-source --statistics --max-line-length=127
       continue-on-error: true  # Don't fail the build for style issues
         
