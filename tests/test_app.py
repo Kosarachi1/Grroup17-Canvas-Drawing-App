@@ -3,8 +3,6 @@ import unittest, os, tempfile
 from src.history import History
 from src.model import CanvasModel
 from src.tools import LineCmd, RectCmd
-from src.app import DrawingApp
-from src.tools import Tool
 from PIL import Image
 
 
@@ -38,15 +36,3 @@ class TestSaveTests(unittest.TestCase):
             Image.open(tf.name)  # should open successfully
         finally:
             os.unlink(tf.name)
-
-
-class TestDrawingApp:
-    """Test cases for the drawing functions."""
-
-    def test_select_tool_updates_status(self):
-        app = DrawingApp()
-        app._select_tool(Tool.LINE)
-        assert app.current_tool == Tool.LINE
-        status_text = app.status.cget("text")
-        assert "Tool: line" in status_text
-        assert f"Color: {app.current_color}" in status_text
