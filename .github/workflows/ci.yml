@@ -47,9 +47,9 @@ jobs:
       run: |
         python -c "
         try:
-            from src.exceptions import DrawingError
-            from src.tools.pen_tool import PenTool  
-            from src.history import HistoryManager
+            from src.errors import FileSaveError
+            from src.tools.pen_tool import Tool 
+            from src.history import History
             print('✅ All core modules import successfully')
         except ImportError as e:
             print(f'❌ Import error: {e}')
