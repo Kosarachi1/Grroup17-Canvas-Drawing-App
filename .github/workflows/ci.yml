@@ -48,7 +48,7 @@ jobs:
         python -c "
         try:
             from src.errors import FileSaveError
-            from src.tools.pen_tool import Tool 
+            from src.tools import Tool 
             from src.history import History
             print('✅ All core modules import successfully')
         except ImportError as e:
