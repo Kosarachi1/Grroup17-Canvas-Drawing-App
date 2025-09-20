@@ -171,7 +171,7 @@ Final integration and release management
 Key commits: 
 
 
-[Anih Kosarachi Clemen] (Developer):
+[Anih Kosarachi Clement] (Developer):
 
 Core canvas and drawing functionality implementation
 Tool architecture and abstract base class design
@@ -228,7 +228,7 @@ group17-drawing-canvas/
 
 
 🎬 Demo Video
-Demo Link: 
+[the link to the demo](https://drive.google.com/file/d/1xwQdm7_0KsDPrj3J-gAaB2OBCiSt87f8/view?usp=sharing) 
 
 The demo video showcases:
 Application startup and interface overview
