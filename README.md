@@ -1,4 +1,4 @@
-# Grroup17-Canvas-Drawing-App.
+# Group17-Canvas-Drawing-App.
 Drawing Canvas App
 
 A Python-based drawing application with freehand drawing, basic shapes, color selection, undo/redo functionality, and PNG export capabilities. Built with Tkinter for the GUI and designed with a modular, object-oriented architecture.
@@ -6,13 +6,13 @@ A Python-based drawing application with freehand drawing, basic shapes, color se
 📋 Project Summary
 This application provides a simple but functional drawing canvas where users can:
 
-Draw freehand with a pen tool
-Create basic shapes (lines, rectangles)
-Choose drawing colors
-Paint drawing
-Undo and redo drawing operations
-Save drawings as PNG files
-Clear the entire canvas
+  Draw freehand with a pen tool
+  Create basic shapes (lines, rectangles)
+  Choose drawing colors
+  Paint drawing
+  Undo and redo drawing operations
+  Save drawings as PNG files
+  Clear the entire canvas
 
 The project demonstrates advanced Python concepts including object-oriented programming, abstract base classes, the command pattern for undo/redo, exception handling, and GUI development with Tkinter.
 
@@ -66,8 +66,8 @@ Setup Instructions
 
 Clone the Repository:
 
-   git clone https://github.com/your-team/group17-drawing-canvas.git
-   cd group17-drawing-canvas
+   git clone https://github.com/Ammar0197/Group17-drawing-canvas-app.git
+   cd Group17-drawing-canvas-app
 
 Install pipenv (if not already installed):
 
@@ -165,34 +165,34 @@ Our commit history demonstrates collaborative development with contributions fro
 
 [Ammar Sunusi Ahmad] (Coordinator):
 
-Initial project setup and repository structure
-Project planning and milestone coordination
-Final integration and release management
-Key commits: 
+  Initial project setup and repository structure
+  Project planning and milestone coordination
+  Final integration and release management
+  Key commits: Initial commit
 
 
 [Anih Kosarachi Clement, Abdulhamid Arome Abdullahi, Ammar Sunusi Ahmad & Okoye Mcpaul Emmanuel] (Developer):
 
-Core canvas and drawing functionality implementation
-Tool architecture and abstract base class design
-Mouse event handling and drawing operations
-Key commits: 
+  Core canvas and drawing functionality implementation
+  Tool architecture and abstract base class design
+  Mouse event handling and drawing operations
+  Key commits: Add drawing-canvas-app folder and update README,
 
 
 [Okoye Mcpaul Emmanuel & Anih Kosarachi Clement] (QA/Tests):
 
-Test suite development for core functionality
-GitHub Actions CI/CD pipeline setup
-Code quality checks and bug identification
-Key commits: 
+  Test suite development for core functionality
+  GitHub Actions CI/CD pipeline setup
+  Code quality checks and bug identification
+  Key commits: Setup git actions and README.md file
 
 
 [Okoye Mcpaul Emmanuel & Anih Kosarachi Clement] (Docs/Presenter):
 
-Comprehensive documentation creation
-Demo video production and editing
-User experience testing and feedback
-Key commits: 
+  Comprehensive documentation creation
+  Demo video production and editing
+  User experience testing and feedback
+  Key commits: Update README.md
 
 
 Architecture

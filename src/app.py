@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import colorchooser, filedialog, messagebox
 from .model import CanvasModel
-from .tools import Tool, FreehandCmd, LineCmd, RectCmd
+from .tools import Tool, FreehandCmd, LineCmd, RectCmd, PaintCmd
 
 class DrawingApp(tk.Tk):
     def __init__(self):
@@ -27,6 +27,9 @@ class DrawingApp(tk.Tk):
             command=lambda: self._select_tool(Tool.LINE)).pack(side=tk.LEFT, padx=2, pady=2)
         tk.Button(toolbar, text='Rect',
             command=lambda: self._select_tool(Tool.RECT)).pack(side=tk.LEFT, padx=2, pady=2)
+        tk.Button(
+            toolbar, text="Paint", command=lambda: self._select_tool(Tool.PAINT)
+        ).pack(side=tk.LEFT, padx=2, pady=2)
 
         # Color picker
         self.color_btn = tk.Button(toolbar, text='Color', command=self._choose_color)
@@ -87,6 +90,29 @@ class DrawingApp(tk.Tk):
         elif self.current_tool == Tool.RECT:
             self._temp_item = self.canvas.create_rectangle(x,y,x,y,
                 outline=self.current_color, width=self.brush_size)
+        elif self.current_tool == Tool.PAINT:
+            # find item under cursor, read its tag (which is string index)
+            item_id_tuple = self.canvas.find_closest(x, y)
+            if not item_id_tuple:
+                return
+            # ensure we have an integer id (find_closest returns a tuple of int)
+            item_id = item_id_tuple[0] if isinstance(item_id_tuple, tuple) else item_id_tuple
+            try:
+                # gettags can return empty tuple
+                tags = self.canvas.gettags(item_id)
+            except tk.TclError:
+                tags = ()
+            if tags:
+                tag0 = tags[0]
+                try:
+                    target_index = int(tag0)
+                    paint_cmd = PaintCmd(
+                        target_index=target_index, color=self.current_color
+                    )
+                    self.model.add_cmd(paint_cmd)
+                    self.model.render_to_tk(self.canvas)
+                except ValueError as e:
+                    print("Paint error (parsing tag):", e)
 
     def _on_move(self, event):
         x, y = event.x, event.y
@@ -116,9 +142,7 @@ class DrawingApp(tk.Tk):
             self.model.add_cmd(cmd)
 
         self.model.render_to_tk(self.canvas)
-        self._temp_item = None
-        self._start_xy = None
-        self._temp_points = []
+        self._reset_temp()
 
     def _undo(self):
         self.model.undo()

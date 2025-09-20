@@ -1,11 +1,11 @@
-import tkinter as tk
+"""model file"""
+import traceback
 from PIL import Image, ImageDraw
 from .history import History
-from .tools import FreehandCmd, LineCmd, RectCmd
-from .errors import FileSaveError
+
 
 class CanvasModel:
-    def __init__(self, width=800, height=600, bg='white'):
+    def __init__(self, width=800, height=600, bg="white"):
         self.width = width
         self.height = height
         self.bg = bg
@@ -26,32 +26,56 @@ class CanvasModel:
     def to_serializable(self):
         return [c.to_dict() for c in self.history.items()]
 
-    def save_png(self, path):
-        img = Image.new('RGB', (self.width, self.height), self.bg)
+    def save_png(self, filename):
+        img = Image.new("RGB", (self.width, self.height), self.bg)
         draw = ImageDraw.Draw(img)
-        for c in self.history.items():
-            if isinstance(c, FreehandCmd):
-                if len(c.points) >= 2:
-                    draw.line(c.points, fill=c.color, width=c.width)
-            elif isinstance(c, LineCmd):
-                draw.line(c.xy, fill=c.color, width=c.width)
-            elif isinstance(c, RectCmd):
-                draw.rectangle(c.xy, outline=c.outline, width=c.width)
-        try:
-            img.save(path, 'PNG')
-        except Exception as e:
-            raise FileSaveError(str(e)) from e
 
-    def render_to_tk(self, tk_canvas: tk.Canvas):
-        tk_canvas.delete('all')
-        for c in self.history.items():
-            if isinstance(c, FreehandCmd):
-                pts = sum([[x,y] for (x,y) in c.points], [])
-                if len(pts) >= 4:
-                    tk_canvas.create_line(*pts, fill=c.color,
-                        width=c.width, capstyle=tk.ROUND, smooth=True)
-            elif isinstance(c, LineCmd):
-                tk_canvas.create_line(*c.xy, fill=c.color, width=c.width)
-            elif isinstance(c, RectCmd):
-                tk_canvas.create_rectangle(*c.xy, outline=c.outline,
-                        width=c.width)
+        commands = self.history.items()
+
+        # Apply PaintCmd modifiers
+        for cmd in commands:
+            if hasattr(cmd, "apply"):
+                try:
+                    cmd.apply(commands)
+                except (AttributeError, TypeError, ValueError) as e:
+                    print("Error applying paint for png:", e)
+                    traceback.print_exc()
+
+        # Render drawable commands
+        for cmd in commands:
+            if hasattr(cmd, "apply"):
+                continue
+            try:
+                cmd.render_pil(draw)
+            except (AttributeError, TypeError, ValueError) as e:
+                print("Error rendering to PIL:", e)
+                traceback.print_exc()
+
+        img.save(filename)
+
+    def render_to_tk(self, canvas):
+        canvas.delete("all")
+
+        # Get all the commands currently in history
+        commands = self.history.items()
+        # Apply modifier commands first (like PaintCmd)
+        for cmd in commands:
+            if hasattr(cmd, "apply"):
+                try:
+                    cmd.apply(commands)
+                except (AttributeError, TypeError, ValueError) as e:
+                    print("Error while applying command:", e)
+                    traceback.print_exc()
+        # Render normal commands
+        for i, cmd in enumerate(commands):
+            if hasattr(cmd, "apply"):
+                continue  # skip modifiers
+            try:
+                cmd.render_tk(canvas, tag=str(i))
+            except TypeError:
+                # fallback for legacy render_tk
+                try:
+                    cmd.render_tk(canvas)
+                except (AttributeError, TypeError, ValueError) as e:
+                    print("Error rendering command:", e)
+                    traceback.print_exc()
