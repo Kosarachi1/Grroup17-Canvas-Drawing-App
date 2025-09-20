@@ -9,6 +9,7 @@ This application provides a simple but functional drawing canvas where users can
 Draw freehand with a pen tool
 Create basic shapes (lines, rectangles)
 Choose drawing colors
+Paint drawing
 Undo and redo drawing operations
 Save drawings as PNG files
 Clear the entire canvas
@@ -151,10 +152,10 @@ If you encounter issues with pipenv, you can use the traditional venv approach:
 👥 Team Roles & Contributions
 Role Assignments
 
-  Coordinator/Lead[Member Name] => Project scheduling, deadline management, final submission coordination, team communication
-  Developer (Core Logic)[Member Name] => Main application code, drawing canvas implementation, tool architecture, core functionality
-  QA/CI & Tests[Member Name] => Test suite development, continuous integration setup, code quality assurance, bug testing
-  Docs/Presenter[Member Name] => README documentation, demo video creation, final report writing, presentation materials 
+  Coordinator/Lead[Ammar Sunusi Ahmad] => Project scheduling, deadline management, final submission coordination, team communication
+  Developer (Core Logic)[Anih Kosarachi Clement] => Main application code, drawing canvas implementation, tool architecture, core functionality
+  QA/CI & Tests[Okoye Mcpaul Emmanuel & Anih Kosarachi Clement] => Test suite development, continuous integration setup, code quality assurance, bug testing
+  Docs/Presenter[Okoye Mcpaul Emmanuel & Abdulhamid Arome Abdullahi] => README documentation, demo video creation, final report writing, presentation materials 
 
 
 Contribution Reflection
@@ -162,7 +163,7 @@ Contribution Reflection
 Commit History Analysis
 Our commit history demonstrates collaborative development with contributions from all team members:
 
-[Member Name] (Coordinator):
+[Ammar Sunusi Ahmad] (Coordinator):
 
 Initial project setup and repository structure
 Project planning and milestone coordination
@@ -170,7 +171,7 @@ Final integration and release management
 Key commits: 
 
 
-[Member Name] (Developer):
+[Anih Kosarachi Clemen] (Developer):
 
 Core canvas and drawing functionality implementation
 Tool architecture and abstract base class design
@@ -178,7 +179,7 @@ Mouse event handling and drawing operations
 Key commits: 
 
 
-[Member Name] (QA/Tests):
+[Okoye Mcpaul Emmanuel & Anih Kosarachi Clement] (QA/Tests):
 
 Test suite development for core functionality
 GitHub Actions CI/CD pipeline setup
@@ -186,7 +187,7 @@ Code quality checks and bug identification
 Key commits: 
 
 
-[Member Name] (Docs/Presenter):
+[Okoye Mcpaul Emmanuel & Abdulhamid Arome Abdullahi] (Docs/Presenter):
 
 Comprehensive documentation creation
 Demo video production and editing
@@ -234,6 +235,7 @@ Application startup and interface overview
 Drawing with different tools (pen, line, rectangle)
 Color selection and customization
 Undo/redo functionality demonstration
+Painting drawing
 Saving drawings as PNG files
 Error handling and edge cases
 
