@@ -153,9 +153,9 @@ If you encounter issues with pipenv, you can use the traditional venv approach:
 Role Assignments
 
   Coordinator/Lead[Ammar Sunusi Ahmad] => Project scheduling, deadline management, final submission coordination, team communication
-  Developer (Core Logic)[Anih Kosarachi Clement] => Main application code, drawing canvas implementation, tool architecture, core functionality
+  Developer (Core Logic)[Anih Kosarachi Clement & Abdulhamid Arome Abdullahi] => Main application code, drawing canvas implementation, tool architecture, core functionality
   QA/CI & Tests[Okoye Mcpaul Emmanuel & Anih Kosarachi Clement] => Test suite development, continuous integration setup, code quality assurance, bug testing
-  Docs/Presenter[Okoye Mcpaul Emmanuel & Abdulhamid Arome Abdullahi] => README documentation, demo video creation, final report writing, presentation materials 
+  Docs/Presenter[Okoye Mcpaul Emmanuel & Anih Kosarachi Clement] => README documentation, demo video creation, final report writing, presentation materials 
 
 
 Contribution Reflection
