@@ -153,9 +153,9 @@ If you encounter issues with pipenv, you can use the traditional venv approach:
 Role Assignments
 
   Coordinator/Lead[Ammar Sunusi Ahmad] => Project scheduling, deadline management, final submission coordination, team communication
-  Developer (Core Logic)[Anih Kosarachi Clement & Abdulhamid Arome Abdullahi] => Main application code, drawing canvas implementation, tool architecture, core functionality
+  Developer (Core Logic)[Anih Kosarachi Clement, Abdulhamid Arome Abdullahi, Ammar Sunusi Ahmad & Okoye Mcpaul Emmanuel] => Main application code, drawing canvas implementation, tool architecture, core functionality
   QA/CI & Tests[Okoye Mcpaul Emmanuel & Anih Kosarachi Clement] => Test suite development, continuous integration setup, code quality assurance, bug testing
-  Docs/Presenter[Okoye Mcpaul Emmanuel & Anih Kosarachi Clement] => README documentation, demo video creation, final report writing, presentation materials 
+  Docs/Presenter[ Anih Kosarachi Clement & Okoye Mcpaul Emmanuel] => README documentation, demo video creation, final report writing, presentation materials 
 
 
 Contribution Reflection
@@ -171,7 +171,7 @@ Final integration and release management
 Key commits: 
 
 
-[Anih Kosarachi Clement & Abdulhamid Arome Abdullahi] (Developer):
+[Anih Kosarachi Clement, Abdulhamid Arome Abdullahi, Ammar Sunusi Ahmad & Okoye Mcpaul Emmanuel] (Developer):
 
 Core canvas and drawing functionality implementation
 Tool architecture and abstract base class design
@@ -232,7 +232,7 @@ group17-drawing-canvas/
 
 The demo video showcases:
 Application startup and interface overview
-Drawing with different tools (pen, line, rectangle)
+Drawing with different tools (freehand, line, rectangle)
 Color selection and customization
 Undo/redo functionality demonstration
 Painting drawing
