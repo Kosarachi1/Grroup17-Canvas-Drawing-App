@@ -171,7 +171,7 @@ Final integration and release management
 Key commits: 
 
 
-[Anih Kosarachi Clement] (Developer):
+[Anih Kosarachi Clement & Abdulhamid Arome Abdullahi] (Developer):
 
 Core canvas and drawing functionality implementation
 Tool architecture and abstract base class design
@@ -187,7 +187,7 @@ Code quality checks and bug identification
 Key commits: 
 
 
-[Okoye Mcpaul Emmanuel & Abdulhamid Arome Abdullahi] (Docs/Presenter):
+[Okoye Mcpaul Emmanuel & Anih Kosarachi Clement] (Docs/Presenter):
 
 Comprehensive documentation creation
 Demo video production and editing
