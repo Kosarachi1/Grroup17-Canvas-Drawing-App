@@ -221,7 +221,7 @@ group17-drawing-canvas/
 └── README.md                      # This file
 
 
-📸 Screenshots
+![the screenshot](https://drive.google.com/file/d/1FObIChKMl9MFTvBte7XZ4FL5JPB387mb/view?usp=sharing)
 
 
 
